@@ -1,0 +1,14 @@
+--- gmerlin-1.0.0/doc/gmerlin.texi.orig	2010-09-30 11:06:22.000000000 +0200
++++ gmerlin-1.0.0/doc/gmerlin.texi	2011-07-25 20:44:05.929818678 +0200
+@@ -3,9 +3,9 @@
+ @setfilename gmerlin.info
+ @include version.texi
+ @settitle Gmerlin @value{VERSION}
+-@dircategory Gmerlin
++@dircategory Miscellaneous:
+ @direntry
+-* Gmerlin: (gmerlin).           Gmerlin multimedia applications
++* Gmerlin: (gmerlin).			Gmerlin multimedia applications
+ @end direntry
+ 
+ 
