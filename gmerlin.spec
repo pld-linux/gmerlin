@@ -9,7 +9,7 @@ Summary:	Set of multimedia libraries builded with an application suite
 Summary(pl.UTF-8):	Zbiór bibliotek multimedialnych wraz z aplikacjami
 Name:		gmerlin
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/gmerlin/%{name}-%{version}.tar.gz
