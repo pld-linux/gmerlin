@@ -33,6 +33,7 @@ BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	jack-audio-connection-kit-devel >= 0.109.2
 BuildRequires:	libcddb-devel >= 1.0.2
 BuildRequires:	libcdio-devel >= 0.76
+BuildRequires:	libcdio-paranoia-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libmusicbrainz-devel >= 2.0.2
 BuildRequires:	libpng-devel
