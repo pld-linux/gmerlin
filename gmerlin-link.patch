@@ -14,7 +14,7 @@
 @@ -154,7 +154,7 @@
  PKG_CHECK_MODULES(FREETYPE, freetype2 >= $FREETYPE_REQUIRED, , AC_MSG_ERROR("freetype2 not found"))
  
- ICONV_LIBS=
+ ICONV_LIBS=""
 -AC_CHECK_LIB(iconv, libiconv_close, ICONV_LIBS="-liconv")
 +AC_CHECK_FUNC([iconv_close], , [AC_CHECK_LIB(iconv, libiconv_close, ICONV_LIBS="-liconv")])
  AC_SUBST(ICONV_LIBS)

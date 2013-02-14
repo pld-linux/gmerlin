@@ -8,15 +8,16 @@
 Summary:	Set of multimedia libraries builded with an application suite
 Summary(pl.UTF-8):	Zbiór bibliotek multimedialnych wraz z aplikacjami
 Name:		gmerlin
-Version:	1.0.0
-Release:	6
+Version:	1.2.0
+Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/gmerlin/%{name}-%{version}.tar.gz
-# Source0-md5:	60d3c5081c8685ee7bc1afdfac8f6dc6
+# Source0-md5:	2f2a0880e738e71486f04c929ba067f4
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-icons.patch
 Patch2:		%{name}-info.patch
+Patch3:		cdio.patch
 URL:		http://gmerlin.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	alsa-lib-devel >= 1.0.0
@@ -25,7 +26,7 @@ BuildRequires:	automake
 %{?with_esd:BuildRequires:	esound-devel >= 0.2.19}
 BuildRequires:	fontconfig-devel >= 2.2.3
 BuildRequires:	freetype-devel >= 2.4
-BuildRequires:	gavl-devel >= 1.2.0
+BuildRequires:	gavl-devel >= 1.4.0
 BuildRequires:	gettext-devel
 # inotify interface
 BuildRequires:	glibc-devel >= 6:2.4
@@ -114,6 +115,7 @@ Statyczne biblioteki gmerlin.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 # evil, sets CFLAGS basing on /proc/cpuinfo, overrides our optflags
 # (--with-cpuflags=none disables using /proc/cpuinfo, but not overriding)
@@ -162,7 +164,10 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with v4l1}
 %attr(755,root,root) %{_bindir}/camelot
 %endif
+%attr(755,root,root) %{_bindir}/album2m3u
+%attr(755,root,root) %{_bindir}/album2pls
 %attr(755,root,root) %{_bindir}/gmerlin
+%attr(755,root,root) %{_bindir}/gmerlin-record
 %attr(755,root,root) %{_bindir}/gmerlin-video-thumbnailer
 %attr(755,root,root) %{_bindir}/gmerlin_alsamixer
 %attr(755,root,root) %{_bindir}/gmerlin_imgconvert
@@ -204,6 +209,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc %{_docdir}/gmerlin/userguide
 %{_infodir}/gmerlin.info*
 %{_mandir}/man1/gmerlin.1*
+%{_mandir}/man1/gmerlin-record.1*
 %{_mandir}/man1/gmerlin_play.1*
 %{_mandir}/man1/gmerlin_remote.1*
 %{_mandir}/man1/gmerlin_transcoder.1*
