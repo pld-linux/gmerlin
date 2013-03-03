@@ -2,6 +2,7 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static libraries
+%bcond_without	nmjedit		# nmjedit program
 %bcond_with	esd		# EsounD support
 %bcond_with	v4l1		# Video4Linux 1 support
 #
@@ -18,6 +19,7 @@ Patch0:		%{name}-link.patch
 Patch1:		%{name}-icons.patch
 Patch2:		%{name}-info.patch
 Patch3:		cdio.patch
+Patch4:		%{name}-am.patch
 URL:		http://gmerlin.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	alsa-lib-devel >= 1.0.0
@@ -35,10 +37,11 @@ BuildRequires:	jack-audio-connection-kit-devel >= 0.109.2
 BuildRequires:	libcddb-devel >= 1.0.2
 BuildRequires:	libcdio-devel >= 0.76
 BuildRequires:	libcdio-paranoia-devel
+BuildRequires:	libexif-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libmusicbrainz-devel >= 2.0.2
 BuildRequires:	libpng-devel
-BuildRequires:	libquicktime-devel >= 1.2.0
+BuildRequires:	libquicktime-devel >= 1.2.4
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool
 BuildRequires:	libv4l-devel >= 0.5.7
@@ -47,6 +50,7 @@ BuildRequires:	libxml2-devel >= 2.4.0
 BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel
 BuildRequires:	sed >= 4.0
+%{?with_nmjedit:BuildRequires:	sqlite3-devel}
 BuildRequires:	texinfo
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXfixes-devel
@@ -56,8 +60,13 @@ BuildRequires:	xorg-lib-libXv-devel
 BuildRequires:	xorg-lib-libX11-devel >= 1.0.0
 Requires:	fontconfig-libs >= 2.2.3
 Requires:	freetype >= 2.4
-Requires:	gavl >= 1.2.0
+Requires:	gavl >= 1.4.0
 Requires:	gtk+2 >= 2:2.8.0
+Requires:	libcddb >= 1.0.2
+Requires:	libcdio >= 0.76
+Requires:	libmusicbrainz >= 2.0.2
+Requires:	libquicktime >= 1.2.4
+Requires:	libv4l >= 0.5.7
 Requires:	libvisual >= 0.4.0
 Requires:	libxml2 >= 2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -83,7 +92,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-devel
 Requires:	fontconfig-devel >= 2.2.3
 Requires:	freetype-devel >= 2.4
-Requires:	gavl-devel >= 1.2.0
+Requires:	gavl-devel >= 1.4.0
 Requires:	gtk+2-devel >= 2:2.8.0
 Requires:	libvisual-devel >= 0.4.0
 Requires:	libxml2-devel >= 2.4.0
@@ -116,6 +125,7 @@ Statyczne biblioteki gmerlin.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 # evil, sets CFLAGS basing on /proc/cpuinfo, overrides our optflags
 # (--with-cpuflags=none disables using /proc/cpuinfo, but not overriding)
@@ -131,6 +141,7 @@ sed -i -e '19,$d;18aAC_DEFUN([LQT_OPT_CFLAGS],[OPT_CFLAGS="$CFLAGS"])' m4/lqt_op
 %configure \
 	%{!?with_esd:--disable-esd} \
 	%{!?with_v4l1:--disable-v4l} \
+	%{?with_nmjedit:--enable-nmjedit} \
 	%{?with_static_libs:--enable-static} \
 	--with-cpuflags=none
 %{__make}
@@ -167,6 +178,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/album2m3u
 %attr(755,root,root) %{_bindir}/album2pls
 %attr(755,root,root) %{_bindir}/gmerlin
+%if %{with nmjedit}
+%attr(755,root,root) %{_bindir}/gmerlin-nmjedit
+%endif
 %attr(755,root,root) %{_bindir}/gmerlin-record
 %attr(755,root,root) %{_bindir}/gmerlin-video-thumbnailer
 %attr(755,root,root) %{_bindir}/gmerlin_alsamixer
