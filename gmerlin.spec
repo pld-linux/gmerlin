@@ -1,4 +1,4 @@
-# TODO: some plugins (lika oa_jack,oa_pulse) to subpackages?
+# TODO: some plugins (like oa_jack,oa_pulse) to subpackages? (see dependencies in files)
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static libraries
@@ -208,15 +208,92 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libgmerlin_gtk.so.0
 %dir %{_libdir}/gmerlin
 %dir %{_libdir}/gmerlin/plugins
-%attr(755,root,root) %{_libdir}/gmerlin/plugins/e_*.so
-%attr(755,root,root) %{_libdir}/gmerlin/plugins/fa_*.so
-%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_*.so
-%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_*.so
-%attr(755,root,root) %{_libdir}/gmerlin/plugins/ir_*.so
-%attr(755,root,root) %{_libdir}/gmerlin/plugins/iw_*.so
-%attr(755,root,root) %{_libdir}/gmerlin/plugins/oa_*.so
-%attr(755,root,root) %{_libdir}/gmerlin/plugins/ov_*.so
-%attr(755,root,root) %{_libdir}/gmerlin/plugins/vis_*.so
+# R: libquicktime
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/e_lqt.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/e_pp_cdrdao.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/e_pp_vcdimager.so
+# R: libpng
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/e_spumux.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/e_subtext.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/e_wav.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fa_sampleformat.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fa_volume.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_bitshift.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_blur.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_colorbalance.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_colormatrix_rgb.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_colormatrix_yuv.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_cropscale.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_decimate.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_deinterlace.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_equalizer.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_flip.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_framerate.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_interlace.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_invert_rgb.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_oldcolor.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_pixelformat.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_swapfields.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_tcdisplay.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_tctweak.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_textlogo.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_tlp.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_transform.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/fv_zoom.so
+# R: alsa-lib
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_alsa.so
+# R: libcdio, libcdio-paranoia
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_cdaudio.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_edl.so
+# R: esound-libs
+%{?with_esd:%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_esd.so}
+# R: jack-audio-connection-kit-libs
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_jack.so
+# R: libquicktime
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_lqt.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_mikmod.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_oss.so
+# R: pulseaudio-libs
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_pulse.so
+%{?with_v4l1:%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_v4l.so}
+# R: libv4l
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_v4l2.so
+# R: libXinerama libXv
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/i_x11.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/ir_bmp.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/ir_gavl.so
+# R: libjpeg
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/ir_jpeg.so
+# R: libpng
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/ir_png.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/ir_pnm.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/ir_tga.so
+# R: libtiff
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/ir_tiff.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/iw_bmp.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/iw_gavl.so
+# R: libjpeg
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/iw_jpeg.so
+# R: libpng
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/iw_png.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/iw_pnm.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/iw_tga.so
+# R: libtiff
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/iw_tiff.so
+# R: alsa-lib
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/oa_alsa.so
+# R: esound-libs
+%{?with_esd:%attr(755,root,root) %{_libdir}/gmerlin/plugins/oa_esd.so}
+# R: jack-audio-connection-kit-libs
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/oa_jack.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/oa_oss.so
+# R: pulseaudio-libs
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/oa_pulse.so
+# R: libv4l
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/ov_v4l2.so
+# R: libXinerama libXv
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/ov_x11.so
+%attr(755,root,root) %{_libdir}/gmerlin/plugins/vis_scope.so
 %{_datadir}/gmerlin
 %doc %dir %{_docdir}/gmerlin
 %doc %{_docdir}/gmerlin/img
@@ -248,7 +325,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgmerlin.so
 %attr(755,root,root) %{_libdir}/libgmerlin_gtk.so
-# if no pkgconfig support, or it misses .private deps, then include .la file
+# many Requires.private or Libs.private missing in *.pc
 %{_libdir}/libgmerlin.la
 %{_libdir}/libgmerlin_gtk.la
 %{_includedir}/gmerlin
