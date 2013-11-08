@@ -12,3 +12,14 @@
  @end direntry
  
  
+--- gmerlin-1.2.0/doc/gmerlin.texi~	2013-11-08 10:24:47.000000000 +0100
++++ gmerlin-1.2.0/doc/gmerlin.texi	2013-11-08 10:28:17.484936331 +0100
+@@ -461,7 +461,7 @@
+ 
+ A gml can be:
+ 
+-@table @bullet
++@table @code
+ @item A regular filename
+ Optionally preceeded with ``file://''. This means, that @b{/files/music.mp3} is the same as
+ @b{file:///files/music.mp3}.
