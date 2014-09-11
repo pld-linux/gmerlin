@@ -27,7 +27,8 @@ BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 %{?with_esd:BuildRequires:	esound-devel >= 0.2.19}
 BuildRequires:	fontconfig-devel >= 2.2.3
-BuildRequires:	freetype-devel >= 2.4
+# pkgconfig(freetype2) >= 9.7.3
+BuildRequires:	freetype-devel >= 1:2.1.9
 BuildRequires:	gavl-devel >= 1.4.0
 BuildRequires:	gettext-devel
 # inotify interface
@@ -59,7 +60,7 @@ BuildRequires:	xorg-lib-libXtst-devel
 BuildRequires:	xorg-lib-libXv-devel
 BuildRequires:	xorg-lib-libX11-devel >= 1.0.0
 Requires:	fontconfig-libs >= 2.2.3
-Requires:	freetype >= 2.4
+Requires:	freetype >= 1:2.1.9
 Requires:	gavl >= 1.4.0
 Requires:	gtk+2 >= 2:2.8.0
 Requires:	libcddb >= 1.0.2
@@ -91,7 +92,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-devel
 Requires:	fontconfig-devel >= 2.2.3
-Requires:	freetype-devel >= 2.4
+Requires:	freetype-devel >= 1:2.1.9
 Requires:	gavl-devel >= 1.4.0
 Requires:	gtk+2-devel >= 2:2.8.0
 Requires:	libvisual-devel >= 0.4.0
