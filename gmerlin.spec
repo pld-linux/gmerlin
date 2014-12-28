@@ -30,7 +30,7 @@ BuildRequires:	fontconfig-devel >= 2.2.3
 # pkgconfig(freetype2) >= 9.7.3
 BuildRequires:	freetype-devel >= 1:2.1.9
 BuildRequires:	gavl-devel >= 1.4.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 # inotify interface
 BuildRequires:	glibc-devel >= 6:2.4
 BuildRequires:	gtk+2-devel >= 2:2.8.0
