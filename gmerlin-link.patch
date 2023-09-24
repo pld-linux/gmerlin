@@ -9,9 +9,9 @@
  
  lib_LTLIBRARIES = libgmerlin.la
  libgmerlin_la_SOURCES = \
---- gmerlin-1.0.0/configure.ac.orig	2011-01-05 20:45:01.000000000 +0100
-+++ gmerlin-1.0.0/configure.ac	2011-07-23 10:40:14.012819521 +0200
-@@ -154,7 +154,7 @@
+--- gmerlin-1.2.0/configure.ac.orig	2023-09-24 09:27:15.642377667 +0200
++++ gmerlin-1.2.0/configure.ac	2023-09-24 09:28:10.758745743 +0200
+@@ -156,7 +156,7 @@ FREETYPE_REQUIRED="9.7.3"
  PKG_CHECK_MODULES(FREETYPE, freetype2 >= $FREETYPE_REQUIRED, , AC_MSG_ERROR("freetype2 not found"))
  
  ICONV_LIBS=""
@@ -19,4 +19,4 @@
 +AC_CHECK_FUNC([iconv_close], , [AC_CHECK_LIB(iconv, libiconv_close, ICONV_LIBS="-liconv")])
  AC_SUBST(ICONV_LIBS)
  
- dnl
+ SQLITE3_LIBS=""
