@@ -1,0 +1,24 @@
+--- gmerlin-1.2.0/gmerlin.pc.in.orig	2012-06-08 13:50:36.000000000 +0200
++++ gmerlin-1.2.0/gmerlin.pc.in	2023-09-24 09:47:17.049202421 +0200
+@@ -6,7 +6,8 @@ includedir=@includedir@
+ Name: Gmerlin
+ Description: Gmerlin libraries
+ Version: @VERSION@
+-Requires.private: libxml-2.0 gavl
++Requires.private: libxml-2.0 gavl fontconfig freetype2 libvisual-0.4
+ Libs: -L${libdir} -lgmerlin
++Libs.private: @XINERAMA_LIBS@ @XFIXES_LIBS@ @XDPMS_LIBS@ @XV_LIBS@ @GL_LIBS@ @XTEST_LIBS@ @X_LIBS@ -ldl -lpthread
+ Cflags: -I${includedir}
+ 
+--- gmerlin-1.2.0/gmerlin-gtk.pc.in.orig	2012-06-08 13:50:36.000000000 +0200
++++ gmerlin-1.2.0/gmerlin-gtk.pc.in	2023-09-24 09:48:40.748748982 +0200
+@@ -6,7 +6,8 @@ includedir=@includedir@
+ Name: Gmerlin-gtk
+ Description: Gmerlin Gtk support library
+ Version: @VERSION@
+-Requires.private: gmerlin gtk+-2.0
++Requires.private: gmerlin gtk+-2.0 libxml-2.0
+ Libs: -L${libdir} -lgmerlin_gtk
++Libs.private: -lm
+ Cflags: -I${includedir}
+ 

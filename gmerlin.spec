@@ -10,7 +10,7 @@ Summary:	Set of multimedia libraries builded with an application suite
 Summary(pl.UTF-8):	Zbiór bibliotek multimedialnych wraz z aplikacjami
 Name:		gmerlin
 Version:	1.2.0
-Release:	14
+Release:	15
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/gmerlin/%{name}-%{version}.tar.gz
@@ -20,6 +20,7 @@ Patch1:		%{name}-icons.patch
 Patch2:		%{name}-info.patch
 Patch3:		cdio.patch
 Patch4:		%{name}-am.patch
+Patch5:		%{name}-pc.patch
 URL:		http://gmerlin.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	alsa-lib-devel >= 1.0.0
@@ -50,6 +51,7 @@ BuildRequires:	libvisual-devel >= 0.4.0
 BuildRequires:	libxml2-devel >= 2.4.0
 BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	sed >= 4.0
 %{?with_nmjedit:BuildRequires:	sqlite3-devel}
 BuildRequires:	texinfo
@@ -120,6 +122,19 @@ Static gmerlin libraries.
 %description static -l pl.UTF-8
 Statyczne biblioteki gmerlin.
 
+%package apidocs
+Summary:	API documentation for gmerlin libraries
+Summary(pl.UTF-8):	Dokumentacja API bibliotek gmerlin
+Group:		Documentation
+Conflicts:	gmerlin-devel < 1.2.0-15
+BuildArch:	noarch
+
+%description apidocs
+API documentation for gmerlin libraries.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API bibliotek gmerlin.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -127,6 +142,7 @@ Statyczne biblioteki gmerlin.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 # evil, sets CFLAGS basing on /proc/cpuinfo, overrides our optflags
 # (--with-cpuflags=none disables using /proc/cpuinfo, but not overriding)
@@ -155,7 +171,8 @@ rm -rf $RPM_BUILD_ROOT
 
 # dlopened plugins
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/gmerlin/plugins/*.{la,a}
-# lib*.la kept - incomplete private dependencies in *.pc
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgmerlin*.la
 
 %find_lang %{name}
 
@@ -326,13 +343,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgmerlin.so
 %attr(755,root,root) %{_libdir}/libgmerlin_gtk.so
-# many Requires.private or Libs.private missing in *.pc
-%{_libdir}/libgmerlin.la
-%{_libdir}/libgmerlin_gtk.la
 %{_includedir}/gmerlin
 %{_pkgconfigdir}/gmerlin.pc
 %{_pkgconfigdir}/gmerlin-gtk.pc
-%doc %{_docdir}/gmerlin/apiref
 
 %if %{with static_libs}
 %files static
@@ -340,3 +353,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libgmerlin.a
 %{_libdir}/libgmerlin_gtk.a
 %endif
+
+%files apidocs
+%defattr(644,root,root,755)
+%{_docdir}/gmerlin/apiref
