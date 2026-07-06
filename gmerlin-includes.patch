@@ -1,0 +1,650 @@
+--- gmerlin-1.2.0/plugins/visualization/vis_scope.c.orig	2026-07-05 22:17:50.831649432 +0200
++++ gmerlin-1.2.0/plugins/visualization/vis_scope.c	2026-07-05 22:18:04.814907011 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
+ 
+--- gmerlin-1.2.0/plugins/x11/ov_x11.c.orig	2026-07-05 22:19:17.137848538 +0200
++++ gmerlin-1.2.0/plugins/x11/ov_x11.c	2026-07-05 22:19:24.431142360 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ 
+--- gmerlin-1.2.0/lib/x11/icon.c.orig	2026-07-05 22:22:20.146857093 +0200
++++ gmerlin-1.2.0/lib/x11/icon.c	2026-07-05 22:22:29.446806711 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <x11/x11.h>
+ #include <x11/x11_window_private.h>
+ 
+--- gmerlin-1.2.0/lib/x11/x11_video.c.orig	2026-07-05 22:23:30.873140602 +0200
++++ gmerlin-1.2.0/lib/x11/x11_video.c	2026-07-05 22:23:36.696442388 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <x11/x11.h>
+ #include <x11/x11_window_private.h>
+--- gmerlin-1.2.0/lib/x11/overlay.c.orig	2026-07-05 22:24:02.032971795 +0200
++++ gmerlin-1.2.0/lib/x11/overlay.c	2026-07-05 22:24:07.839607004 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <x11/x11.h>
+ #include <x11/x11_window_private.h>
+--- gmerlin-1.2.0/lib/x11/screensaver.c.orig	2026-07-05 22:24:23.416189285 +0200
++++ gmerlin-1.2.0/lib/x11/screensaver.c	2026-07-05 22:24:28.946159327 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <x11/x11.h>
+--- gmerlin-1.2.0/apps/kbd/kbd_daemon.c.orig	2026-07-05 22:25:02.502644203 +0200
++++ gmerlin-1.2.0/apps/kbd/kbd_daemon.c	2026-07-05 22:25:10.159269390 +0200
+@@ -23,6 +23,7 @@
+ #include <sys/types.h>
+ #include <unistd.h>
+ #include <sys/stat.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <X11/Xlib.h>
+--- gmerlin-1.2.0/lib/x11/ximage.c.orig	2026-07-06 05:30:16.714421850 +0200
++++ gmerlin-1.2.0/lib/x11/ximage.c	2026-07-06 05:30:24.891044220 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <x11/x11.h>
+ #include <x11/x11_window_private.h>
+ 
+--- gmerlin-1.2.0/lib/x11/glvideo.c.orig	2026-07-06 05:30:42.184283868 +0200
++++ gmerlin-1.2.0/lib/x11/glvideo.c	2026-07-06 05:30:49.260912197 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <x11/x11.h>
+--- gmerlin-1.2.0/lib/x11/xvideo.c.orig	2026-07-06 05:31:01.914176982 +0200
++++ gmerlin-1.2.0/lib/x11/xvideo.c	2026-07-06 05:31:09.057471616 +0200
+@@ -23,6 +23,7 @@
+ #include <x11/x11_window_private.h>
+ 
+ #include <X11/extensions/Xvlib.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <gmerlin/log.h>
+--- gmerlin-1.2.0/lib/visualize_slave.c.orig	2026-07-06 05:31:26.537376920 +0200
++++ gmerlin-1.2.0/lib/visualize_slave.c	2026-07-06 05:31:32.840676105 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <dlfcn.h>
+ #include <unistd.h>
+--- gmerlin-1.2.0/lib/bgladspa.c.orig	2026-07-06 05:31:50.257248418 +0200
++++ gmerlin-1.2.0/lib/bgladspa.c	2026-07-06 05:31:57.157211038 +0200
+@@ -21,6 +21,7 @@
+ 
+ #include <math.h>
+ #include <dlfcn.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <ladspa.h>
+--- gmerlin-1.2.0/lib/bgfrei0r.c.orig	2026-07-06 05:32:12.567127555 +0200
++++ gmerlin-1.2.0/lib/bgfrei0r.c	2026-07-06 05:32:19.597089471 +0200
+@@ -26,6 +26,7 @@
+ #include <config.h>
+ 
+ #include <dlfcn.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ 
+--- gmerlin-1.2.0/lib/chapterlist.c.orig	2026-07-06 05:32:45.006951814 +0200
++++ gmerlin-1.2.0/lib/chapterlist.c	2026-07-06 05:32:51.533583122 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <config.h>
+--- gmerlin-1.2.0/lib/converters.c.orig	2026-07-06 05:33:01.656861613 +0200
++++ gmerlin-1.2.0/lib/converters.c	2026-07-06 05:33:15.620119301 +0200
+@@ -22,6 +22,7 @@
+ #include <gmerlin/converters.h>
+ 
+ #include <config.h>
++#include <stdlib.h>
+ #include <gmerlin/translation.h>
+ #include <gmerlin/utils.h>
+ 
+--- gmerlin-1.2.0/lib/edldec.c.orig	2026-07-06 05:33:32.726693294 +0200
++++ gmerlin-1.2.0/lib/edldec.c	2026-07-06 05:33:42.656639499 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <config.h>
+--- gmerlin-1.2.0/lib/edl_xml.c.orig	2026-07-06 05:33:56.199899462 +0200
++++ gmerlin-1.2.0/lib/edl_xml.c	2026-07-06 05:34:17.113119498 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include <inttypes.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <gmerlin/edl.h>
+ 
+--- gmerlin-1.2.0/lib/encoder.c.orig	2026-07-06 05:34:27.769728433 +0200
++++ gmerlin-1.2.0/lib/encoder.c	2026-07-06 05:34:33.553030436 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include <config.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <gmerlin/pluginregistry.h>
+--- gmerlin-1.2.0/lib/log.c.orig	2026-07-06 05:34:44.072973444 +0200
++++ gmerlin-1.2.0/lib/log.c	2026-07-06 05:34:52.819592726 +0200
+@@ -29,6 +29,7 @@
+ 
+ #include <stdarg.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <pthread.h>
+ #include <syslog.h>
+ 
+--- gmerlin-1.2.0/lib/lcdproc.c.orig	2026-07-06 05:35:03.322869159 +0200
++++ gmerlin-1.2.0/lib/lcdproc.c	2026-07-06 05:35:15.422803608 +0200
+@@ -31,6 +31,7 @@
+ #include <gavl/metatags.h>
+ 
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <sys/types.h> /* pid_t */
+ #include <unistd.h>
+--- gmerlin-1.2.0/lib/mediafiledevice.c.orig	2026-07-06 05:35:33.242707069 +0200
++++ gmerlin-1.2.0/lib/mediafiledevice.c	2026-07-06 05:35:41.365996395 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include <config.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <sys/types.h>
+--- gmerlin-1.2.0/lib/ocr.c.orig	2026-07-06 05:35:54.049261017 +0200
++++ gmerlin-1.2.0/lib/ocr.c	2026-07-06 05:36:02.832546767 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include <config.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
+ 
+--- gmerlin-1.2.0/lib/msgqueue.c.orig	2026-07-06 05:36:11.585832680 +0200
++++ gmerlin-1.2.0/lib/msgqueue.c	2026-07-06 05:36:23.812433109 +0200
+@@ -35,6 +35,7 @@
+ 
+ #include <string.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <pthread.h>
+ #include <gmerlin/bg_sem.h>
+ 
+--- gmerlin-1.2.0/lib/ovl2text.c.orig	2026-07-06 05:36:42.985662572 +0200
++++ gmerlin-1.2.0/lib/ovl2text.c	2026-07-06 05:36:49.415627738 +0200
+@@ -21,6 +21,7 @@
+ 
+ #include <config.h>
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ 
+--- gmerlin-1.2.0/lib/pluginreg_xml.c.orig	2026-07-06 05:37:04.265547289 +0200
++++ gmerlin-1.2.0/lib/pluginreg_xml.c	2026-07-06 05:37:11.345508934 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <locale.h>
+ 
+--- gmerlin-1.2.0/lib/remote.c.orig	2026-07-06 05:37:23.065445441 +0200
++++ gmerlin-1.2.0/lib/remote.c	2026-07-06 05:37:30.895403023 +0200
+@@ -31,6 +31,7 @@
+ #endif
+ 
+ #include <unistd.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <gmerlin/remote.h>
+--- gmerlin-1.2.0/lib/thumbnail.c.orig	2026-07-06 05:37:59.648580587 +0200
++++ gmerlin-1.2.0/lib/thumbnail.c	2026-07-06 05:38:06.421877226 +0200
+@@ -26,6 +26,7 @@
+ #include <unistd.h>    /* stat() */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
+ 
+--- gmerlin-1.2.0/lib/transcoder_track_xml.c.orig	2026-07-06 05:38:25.528440383 +0200
++++ gmerlin-1.2.0/lib/transcoder_track_xml.c	2026-07-06 05:38:31.398408583 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <gmerlin/pluginregistry.h>
+ #include <gmerlin/tree.h>
+--- gmerlin-1.2.0/lib/tree_xml.c.orig	2026-07-06 05:38:43.315010692 +0200
++++ gmerlin-1.2.0/lib/tree_xml.c	2026-07-06 05:38:49.491643897 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <gmerlin/xmlutils.h>
+--- gmerlin-1.2.0/lib/visualize.c.orig	2026-07-06 05:39:02.241574825 +0200
++++ gmerlin-1.2.0/lib/visualize.c	2026-07-06 05:39:09.381536144 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <gavl/gavl.h>
+--- gmerlin-1.2.0/plugins/edl/i_edl.c.orig	2026-07-06 05:39:34.231401521 +0200
++++ gmerlin-1.2.0/plugins/edl/i_edl.c	2026-07-06 05:39:40.794699298 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include <config.h>
++#include <stdlib.h>
+ #include <gmerlin/translation.h>
+ 
+ #include <gmerlin/plugin.h>
+--- gmerlin-1.2.0/plugins/videofilters/bgyadif.c.orig	2026-07-06 05:44:53.803003586 +0200
++++ gmerlin-1.2.0/plugins/videofilters/bgyadif.c	2026-07-06 05:45:06.789599899 +0200
+@@ -35,6 +35,7 @@
+ #include <bgyadif.h>
+ #include <gavl/gavldsp.h>
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ //#undef HAVE_MMX
+--- gmerlin-1.2.0/plugins/jack/jack_common.c.orig	2026-07-06 05:45:31.689465004 +0200
++++ gmerlin-1.2.0/plugins/jack/jack_common.c	2026-07-06 05:45:37.469433692 +0200
+@@ -18,6 +18,7 @@
+  * You should have received a copy of the GNU General Public License
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include "jack_common.h"
+--- gmerlin-1.2.0/plugins/lqt/lqt_common.c.orig	2026-07-06 05:46:19.395873223 +0200
++++ gmerlin-1.2.0/plugins/lqt/lqt_common.c	2026-07-06 05:46:25.652505995 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <config.h>
+--- gmerlin-1.2.0/plugins/lqt/e_lqt.c.orig	2026-07-06 05:46:33.339131019 +0200
++++ gmerlin-1.2.0/plugins/lqt/e_lqt.c	2026-07-06 05:46:39.942428580 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <config.h>
+--- gmerlin-1.2.0/plugins/lqt/i_lqt.c.orig	2026-07-06 05:46:52.722359345 +0200
++++ gmerlin-1.2.0/plugins/lqt/i_lqt.c	2026-07-06 05:47:00.465650729 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
+ 
+--- gmerlin-1.2.0/plugins/png/ir_png.c.orig	2026-07-06 05:49:51.361391574 +0200
++++ gmerlin-1.2.0/plugins/png/ir_png.c	2026-07-06 05:50:08.261300019 +0200
+@@ -21,6 +21,7 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <strings.h>
+ 
+ #include <config.h>
+ #include <gmerlin/bg_version.h>
+--- gmerlin-1.2.0/plugins/x11/i_x11.c.orig	2026-07-06 05:50:25.121208681 +0200
++++ gmerlin-1.2.0/plugins/x11/i_x11.c	2026-07-06 05:50:32.424502449 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include <config.h>
++#include <stdlib.h>
+ #include <gmerlin/translation.h>
+ #include <gmerlin/plugin.h>
+ 
+--- gmerlin-1.2.0/plugins/pulseaudio/pulseaudio_common.c.orig	2026-07-06 05:50:45.231099737 +0200
++++ gmerlin-1.2.0/plugins/pulseaudio/pulseaudio_common.c	2026-07-06 05:50:50.871069182 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include "pulseaudio_common.h"
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <sys/types.h>
+--- gmerlin-1.2.0/plugins/mikmod/i_mikmod.c.orig	2026-07-06 05:51:09.777633423 +0200
++++ gmerlin-1.2.0/plugins/mikmod/i_mikmod.c	2026-07-06 05:51:16.880928275 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
+ #include <signal.h>
+--- gmerlin-1.2.0/plugins/postprocessors/cdrdao_common.c.orig	2026-07-06 05:52:16.607271376 +0200
++++ gmerlin-1.2.0/plugins/postprocessors/cdrdao_common.c	2026-07-06 05:52:23.187235729 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <pthread.h>
+ #include <signal.h>
+--- gmerlin-1.2.0/plugins/subwriters/e_subtext.c.orig	2026-07-06 05:52:40.073810914 +0200
++++ gmerlin-1.2.0/plugins/subwriters/e_subtext.c	2026-07-06 05:52:46.540442548 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <config.h>
+--- gmerlin-1.2.0/tests/imgconvert.c.orig	2026-07-06 05:54:42.679813367 +0200
++++ gmerlin-1.2.0/tests/imgconvert.c	2026-07-06 05:54:50.656436821 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <gmerlin/pluginregistry.h>
+--- gmerlin-1.2.0/tests/album2pls.c.orig	2026-07-06 18:01:38.853524263 +0200
++++ gmerlin-1.2.0/tests/album2pls.c	2026-07-06 18:01:49.640132493 +0200
+@@ -21,6 +21,7 @@
+ 
+ #include <config.h>
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ 
+--- gmerlin-1.2.0/tests/gmerlin_imgdiff.c.orig	2026-07-06 18:02:05.006715912 +0200
++++ gmerlin-1.2.0/tests/gmerlin_imgdiff.c	2026-07-06 18:02:11.170015856 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <gmerlin/pluginregistry.h>
+ #include <gmerlin/utils.h>
+--- gmerlin-1.2.0/tests/gmerlin_psnr.c.orig	2026-07-06 18:02:20.676631021 +0200
++++ gmerlin-1.2.0/tests/gmerlin_psnr.c	2026-07-06 18:02:28.106590769 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <gmerlin/pluginregistry.h>
+ #include <gmerlin/utils.h>
+--- gmerlin-1.2.0/tests/gmerlin_ssim.c.orig	2026-07-06 18:02:37.789871644 +0200
++++ gmerlin-1.2.0/tests/gmerlin_ssim.c	2026-07-06 18:02:50.886467360 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <gmerlin/pluginregistry.h>
+ #include <gmerlin/utils.h>
+--- gmerlin-1.2.0/tests/gmerlin_vanalyze.c.orig	2026-07-06 18:02:58.379760099 +0200
++++ gmerlin-1.2.0/tests/gmerlin_vanalyze.c	2026-07-06 18:03:11.349689835 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <gmerlin/pluginregistry.h>
+ #include <gmerlin/utils.h>
+--- gmerlin-1.2.0/tests/gmerlin_vpsnr.c.orig	2026-07-06 18:03:20.302974664 +0200
++++ gmerlin-1.2.0/tests/gmerlin_vpsnr.c	2026-07-06 18:03:29.882922765 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <gmerlin/pluginregistry.h>
+ #include <gmerlin/utils.h>
+--- gmerlin-1.2.0/tests/fvtest.c.orig	2026-07-06 18:03:42.756186358 +0200
++++ gmerlin-1.2.0/tests/fvtest.c	2026-07-06 18:03:49.059485543 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <config.h>
+--- gmerlin-1.2.0/tests/dump_plugins.c.orig	2026-07-06 18:04:07.949383208 +0200
++++ gmerlin-1.2.0/tests/dump_plugins.c	2026-07-06 18:04:21.752641763 +0200
+@@ -26,6 +26,7 @@
+ #include <gmerlin/utils.h>
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #define FORMAT_HTML    0
+ #define FORMAT_TEXI    1
+--- gmerlin-1.2.0/tests/extractchannel.c.orig	2026-07-06 18:04:42.549195765 +0200
++++ gmerlin-1.2.0/tests/extractchannel.c	2026-07-06 18:04:50.335820248 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <gmerlin/pluginregistry.h>
+ #include <gmerlin/utils.h>
+ 
+--- gmerlin-1.2.0/tests/insertchannel.c.orig	2026-07-06 18:05:03.629081565 +0200
++++ gmerlin-1.2.0/tests/insertchannel.c	2026-07-06 18:05:09.119051823 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <gmerlin/pluginregistry.h>
+--- gmerlin-1.2.0/tests/ocrtest.c.orig	2026-07-06 18:05:18.315668668 +0200
++++ gmerlin-1.2.0/tests/ocrtest.c	2026-07-06 18:05:25.605629175 +0200
+@@ -25,6 +25,7 @@
+ #include <gmerlin/ocr.h>
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ int main(int argc, char ** argv)
+--- gmerlin-1.2.0/tests/visualization.c.orig	2026-07-06 18:05:56.028797692 +0200
++++ gmerlin-1.2.0/tests/visualization.c	2026-07-06 18:07:02.505104225 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <config.h>
+--- gmerlin-1.2.0/apps/player/gmerlin_remote.c.orig	2026-07-06 18:07:46.958196735 +0200
++++ gmerlin-1.2.0/apps/player/gmerlin_remote.c	2026-07-06 18:07:54.491489257 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <config.h>
+--- gmerlin-1.2.0/apps/cmdlinerecorder/gmerlin-record.c.orig	2026-07-06 18:08:26.254650515 +0200
++++ gmerlin-1.2.0/apps/cmdlinerecorder/gmerlin-record.c	2026-07-06 18:08:33.131279928 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include <signal.h>
++#include <stdlib.h>
+ 
+ #include <config.h>
+ #include <gmerlin/recorder.h>
+--- gmerlin-1.2.0/apps/nmjedit/nmjedit.h.orig	2026-07-06 18:08:55.581158306 +0200
++++ gmerlin-1.2.0/apps/nmjedit/nmjedit.h	2026-07-06 18:09:53.000847237 +0200
+@@ -25,6 +25,7 @@
+ #include <time.h>
+ #include <sqlite3.h>
+ #include <inttypes.h>
++#include <stdlib.h>
+ 
+ #include <gmerlin/pluginregistry.h>
+ 
+--- gmerlin-1.2.0/apps/nmjedit/gmerlin-nmjedit.c.orig	2026-07-06 18:11:13.623743798 +0200
++++ gmerlin-1.2.0/apps/nmjedit/gmerlin-nmjedit.c	2026-07-06 18:11:32.480308310 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ 
+--- gmerlin-1.2.0/apps/nmjedit/file.c.orig	2026-07-06 18:13:06.076467923 +0200
++++ gmerlin-1.2.0/apps/nmjedit/file.c	2026-07-06 18:13:22.253046954 +0200
+@@ -26,6 +26,7 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <errno.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include "nmjedit.h"
+--- gmerlin-1.2.0/apps/nmjedit/nmjedit.c.orig	2026-07-06 18:14:02.196163897 +0200
++++ gmerlin-1.2.0/apps/nmjedit/nmjedit.c	2026-07-06 18:14:28.352688861 +0200
+@@ -26,6 +26,7 @@
+ #include <gmerlin/utils.h>
+ #define LOG_DOMAIN "nmjedit"
+ 
++#include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
+ 
+--- gmerlin-1.2.0/apps/nmjedit/song.c.orig	2026-07-06 18:15:14.292439984 +0200
++++ gmerlin-1.2.0/apps/nmjedit/song.c	2026-07-06 18:15:20.455739928 +0200
+@@ -22,6 +22,7 @@
+ /* Song */
+ 
+ #include "nmjedit.h"
++#include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
+ #include <gmerlin/utils.h>
+--- gmerlin-1.2.0/apps/transcoder/gmerlin_transcoder_remote.c.orig	2026-07-06 18:15:32.445674973 +0200
++++ gmerlin-1.2.0/apps/transcoder/gmerlin_transcoder_remote.c	2026-07-06 18:15:41.015628546 +0200
+@@ -21,6 +21,7 @@
+ 
+ 
+ #include <config.h>
++#include <stdlib.h>
+ #include <gmerlin/cfg_registry.h>
+ #include <gmerlin/cmdline.h>
+ #include <gmerlin/utils.h>
+--- gmerlin-1.2.0/apps/thumbnailer/gmerlin-video-thumbnailer.c.orig	2026-07-06 18:17:55.704898871 +0200
++++ gmerlin-1.2.0/apps/thumbnailer/gmerlin-video-thumbnailer.c	2026-07-06 18:18:09.011493450 +0200
+@@ -19,6 +19,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  * *****************************************************************/
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <sys/types.h> /* stat() */
+--- gmerlin-1.2.0/apps/kbd/keys_xml.c.orig	2026-07-06 18:18:31.584704494 +0200
++++ gmerlin-1.2.0/apps/kbd/keys_xml.c	2026-07-06 18:18:40.214657741 +0200
+@@ -20,6 +20,7 @@
+  * *****************************************************************/
+ 
+ #include <inttypes.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include <libxml/tree.h>

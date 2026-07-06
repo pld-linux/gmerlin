@@ -13,7 +13,7 @@ Version:	1.2.0
 Release:	15
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/gmerlin/%{name}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/gmerlin/%{name}-%{version}.tar.gz
 # Source0-md5:	2f2a0880e738e71486f04c929ba067f4
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-icons.patch
@@ -21,7 +21,8 @@ Patch2:		%{name}-info.patch
 Patch3:		cdio.patch
 Patch4:		%{name}-am.patch
 Patch5:		%{name}-pc.patch
-URL:		http://gmerlin.sourceforge.net/
+Patch6:		%{name}-includes.patch
+URL:		https://gmerlin.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	alsa-lib-devel >= 1.0.0
 BuildRequires:	autoconf >= 2.50
@@ -143,6 +144,7 @@ Dokumentacja API bibliotek gmerlin.
 %patch -P3 -p1
 %patch -P4 -p1
 %patch -P5 -p1
+%patch -P6 -p1
 
 # evil, sets CFLAGS basing on /proc/cpuinfo, overrides our optflags
 # (--with-cpuflags=none disables using /proc/cpuinfo, but not overriding)
