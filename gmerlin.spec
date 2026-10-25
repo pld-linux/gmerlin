@@ -22,6 +22,8 @@ Patch3:		cdio.patch
 Patch4:		%{name}-am.patch
 Patch5:		%{name}-pc.patch
 Patch6:		%{name}-includes.patch
+Patch7:		%{name}-types.patch
+Patch8:		%{name}-bool.patch
 URL:		https://gmerlin.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	alsa-lib-devel >= 1.0.0
@@ -62,17 +64,17 @@ BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXtst-devel
 BuildRequires:	xorg-lib-libXv-devel
 BuildRequires:	xorg-lib-libX11-devel >= 1.0.0
-Requires:	fontconfig-libs >= 2.2.3
-Requires:	freetype >= 1:2.1.9
-Requires:	gavl >= 1.4.0
-Requires:	gtk+2 >= 2:2.8.0
-Requires:	libcddb >= 1.0.2
-Requires:	libcdio >= 0.76
-Requires:	libmusicbrainz >= 2.0.2
-Requires:	libquicktime >= 1.2.4
-Requires:	libv4l >= 0.5.7
-Requires:	libvisual >= 0.4.0
-Requires:	libxml2 >= 2.4.0
+Requires:	fontconfig-libs%{?_isa} >= 2.2.3
+Requires:	freetype%{?_isa} >= 1:2.1.9
+Requires:	gavl%{?_isa} >= 1.4.0
+Requires:	gtk+2%{?_isa} >= 2:2.8.0
+Requires:	libcddb%{?_isa} >= 1.0.2
+Requires:	libcdio%{?_isa} >= 0.76
+Requires:	libmusicbrainz%{?_isa} >= 2.0.2
+Requires:	libquicktime%{?_isa} >= 1.2.4
+Requires:	libv4l%{?_isa} >= 0.5.7
+Requires:	libvisual%{?_isa} >= 0.4.0
+Requires:	libxml2%{?_isa} >= 2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -92,18 +94,18 @@ aplikacji.
 Summary:	Header files for gmerlin libraries
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek gmerlin
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 Requires:	OpenGL-devel
-Requires:	fontconfig-devel >= 2.2.3
-Requires:	freetype-devel >= 1:2.1.9
-Requires:	gavl-devel >= 1.4.0
-Requires:	gtk+2-devel >= 2:2.8.0
-Requires:	libvisual-devel >= 0.4.0
-Requires:	libxml2-devel >= 2.4.0
-Requires:	xorg-lib-libXfixes-devel
-Requires:	xorg-lib-libXinerama-devel
-Requires:	xorg-lib-libXtst-devel
-Requires:	xorg-lib-libXv-devel
+Requires:	fontconfig-devel%{?_isa} >= 2.2.3
+Requires:	freetype-devel%{?_isa} >= 1:2.1.9
+Requires:	gavl-devel%{?_isa} >= 1.4.0
+Requires:	gtk+2-devel%{?_isa} >= 2:2.8.0
+Requires:	libvisual-devel%{?_isa} >= 0.4.0
+Requires:	libxml2-devel%{?_isa} >= 2.4.0
+Requires:	xorg-lib-libXfixes-devel%{?_isa}
+Requires:	xorg-lib-libXinerama-devel%{?_isa}
+Requires:	xorg-lib-libXtst-devel%{?_isa}
+Requires:	xorg-lib-libXv-devel%{?_isa}
 
 %description devel
 Header files for gmerlin libraries.
@@ -115,7 +117,7 @@ Pliki nagłówkowe bibliotek gmerlin.
 Summary:	Static gmerlin libraries
 Summary(pl.UTF-8):	Statyczne biblioteki gmerlin
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static gmerlin libraries.
@@ -145,6 +147,8 @@ Dokumentacja API bibliotek gmerlin.
 %patch -P4 -p1
 %patch -P5 -p1
 %patch -P6 -p1
+%patch -P7 -p1
+%patch -P8 -p1
 
 # evil, sets CFLAGS basing on /proc/cpuinfo, overrides our optflags
 # (--with-cpuflags=none disables using /proc/cpuinfo, but not overriding)

@@ -1,0 +1,11 @@
+--- gmerlin-1.2.0/lib/transcoder_track.c.orig	2012-06-08 13:50:32.000000000 +0200
++++ gmerlin-1.2.0/lib/transcoder_track.c	2026-10-25 20:24:19.253086283 +0100
+@@ -1434,7 +1434,7 @@ bg_transcoder_track_subtitle_overlay_get
+   }
+ 
+ const bg_parameter_info_t *
+-bg_transcoder_track_get_general_parameters(bg_transcoder_track_t * t)
++bg_transcoder_track_get_general_parameters()
+   {
+   return parameters_general;
+   }
